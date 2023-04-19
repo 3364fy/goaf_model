@@ -1,0 +1,46 @@
+# encoding: utf-8
+# 2022 R1
+SetScriptVersion(Version="22.1.217")
+template1 = GetTemplate(TemplateName="Geometry")
+system1 = template1.CreateSystem()
+template2 = GetTemplate(TemplateName="Mesh")
+system2 = template2.CreateSystem(
+    Position="Right",
+    RelativeTo=system1)
+template3 = GetTemplate(TemplateName="FLUENT")
+system3 = template3.CreateSystem(
+    Position="Right",
+    RelativeTo=system2)
+template4 = GetTemplate(TemplateName="Results")
+system4 = template4.CreateSystem(
+    Position="Right",
+    RelativeTo=system3)
+geometryComponent1 = system2.GetComponent(Name="Geometry")
+geometryComponent2 = system1.GetComponent(Name="Geometry")
+geometryComponent1.ReplaceWithShare(
+    TargetSystem=system2,
+    ComponentToShare=geometryComponent2,
+    SourceSystem=system1)
+meshComponent1 = system2.GetComponent(Name="Mesh")
+setupComponent1 = system3.GetComponent(Name="Setup")
+meshComponent1.TransferData(TargetComponent=setupComponent1)
+solutionComponent1 = system3.GetComponent(Name="Solution")
+resultsComponent1 = system4.GetComponent(Name="Results")
+solutionComponent1.TransferData(TargetComponent=resultsComponent1)
+mesh1 = system2.GetContainer(ComponentName="Mesh")
+mesh1.Edit()
+mesh1.Exit()
+geometry1 = system1.GetContainer(ComponentName="Geometry")
+geometry1.Edit()
+geometry1.Exit()
+system5 = template1.CreateSystem(
+    Position="Below",
+    RelativeTo=system1)
+geometry2 = system5.GetContainer(ComponentName="Geometry")
+geometry2.SetFile(FilePath="E:/桌面/Drawing1.iges")
+geometry2.Edit()
+geometry2.Exit()
+system5.Delete()
+geometry1.Edit()
+Save(Overwrite=True)
+Save(Overwrite=True)

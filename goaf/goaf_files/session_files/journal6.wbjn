@@ -1,0 +1,2082 @@
+# encoding: utf-8
+# 2022 R1
+SetScriptVersion(Version="22.1.217")
+system1 = GetSystem(Name="Post")
+results1 = system1.GetContainer(ComponentName="Results")
+results1.Edit()
+system2 = GetSystem(Name="FLU 2")
+setup1 = system2.GetContainer(ComponentName="Setup")
+fluentLauncherSettings1 = setup1.GetFluentLauncherSettings()
+fluentLauncherSettings1.SetEntityProperties(Properties=Set(EnvPath={}))
+setup1.Edit()
+setup1.SendCommand(Command='(cx-gui-do cx-activate-tab-index "NavigationPane*Frame1(TreeTab)" 0)(cx-gui-do cx-activate-tab-index "NavigationPane*Frame1(TreeTab)" 1)')
+setup1.SendCommand(Command='(%py-exec "preferences.fixState()")')
+setup1.SendCommand(Command="(%py-exec \"preferences.setState({r'Appearance': None,r'GPUApp': None,r'General': None,r'Graphics': None,r'MatProApp': None,r'MeshingWorkflow': None,r'Navigation': None,r'PrjApp': None,r'Simulation': None,r'TurboWorkflow': None,})\")")
+setup1.SendCommand(Command='/file/set-tui-version "22.1"(cx-gui-do cx-activate-item "Information*OK")(cx-gui-do cx-activate-item "Key Behavioral Changes*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command="(cx-use-window-id 51)(cx-set-camera-relative '(-441.7 -1578.39 -85.2338) '(0 0 0) '(0.698724 -0.293583 1.38855) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-310.235 90.1839 94.0292) '(0 0 0) '(0.0230406 0.0481099 -0.0296375) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(285.116 -35.5818 11.034) '(0 0 0) '(0.0120795 0.0487297 -0.0313481) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-489.907 1.17847 -305.787) '(0 0 0) '(-0.0411773 -0.382493 0.145342) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(265.864 -122.258 -172.105) '(0 0 0) '(-0.0523261 -0.126478 0.0172058) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(156.538 253.122 647.434) '(0 0 0) '(0.101692 0.664414 -0.284322) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-256.889 161.901 77.6085) '(0 0 0) '(0.0242303 0.0647451 -0.0769684) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-166.613 -136.807 -230.599) '(0 0 0) '(-0.118277 -0.190667 0.19982) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(254.026 -129.768 -17.7155) '(0 0 0) '(-0.0206465 -0.0365865 0.0260507) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-17.1037 67.016 87.1063) '(0 0 0) '(0.0234545 0.0866578 -0.0614481) 0 0)(cx-use-window-id 51)(cxg-clear-all-selections (cx-active-window))(cxg-add-surfaces-to-selection '(_____2-_____5-trg) (cx-active-window))")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Quick Edit*Table1*PushButton4(icon_close)")')
+setup1.SendCommand(Command="(cx-use-window-id 51)(cxg-clear-all-selections (cx-active-window))(cxg-add-surfaces-to-selection '(wall-huifenghang) (cx-active-window))")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Quick Edit*Table1*PushButton4(icon_close)")')
+setup1.SendCommand(Command="(cx-use-window-id 51)(cx-set-camera-relative '(-650.417 367.815 -406.056) '(0 0 0) '(-0.147117 -0.145435 0.102533) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-80.8707 232.73 -120.469) '(0 0 0) '(-0.00467528 -0.00144753 0.000723958) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-3.88171 13.7 -92.8664) '(0 0 0) '(-0.0784562 -0.010237 0.00147963) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-4.30347 102.624 27.8317) '(0 0 0) '(0.118428 0.00572056 -0.000105143) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-0.0227661 -33.2523 16.2428) '(0 0 0) '(0 0 0) 0 0)(cx-use-window-id 51)(cxg-clear-all-selections (cx-active-window))(cxg-add-surfaces-to-selection '(inlet) (cx-active-window))")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Quick Edit*Table1*PushButton4(icon_close)")')
+setup1.SendCommand(Command="(cx-use-window-id 51)(cx-set-camera-relative '(333.152 -481.362 274.573) '(0 0 0) '(0.140301 -0.00516218 -0.0146623) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(5.37756 -18.6012 -25.4747) '(0 0 0) '(-0.0218493 -0.0334141 0.0197096) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(92.0406 -64.2316 -21.6583) '(0 0 0) '(-0.00992358 -0.020207 0.0103421) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(80.659 -229.643 -37.4213) '(0 0 0) '(-0.0345403 -0.0753136 0.0325586) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-93.842 79.5726 98.76) '(0 0 0) '(0.0354744 0.0749139 -0.0325429) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(51.1884 213.379 325.603) '(0 0 0) '(0.120478 0.243463 -0.17857) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(111.856 -188.148 -192.455) '(0 0 0) '(-0.0722826 -0.191461 0.145798) 0 0)(cx-use-window-id 51)(cxg-clear-all-selections (cx-active-window))(cxg-add-surfaces-to-selection '(_____2-_____5-trg) (cx-active-window))(cx-use-window-id 51)(cxg-clear-all-selections (cx-active-window))(cxg-add-surfaces-to-selection '(wall-jinfenghang) (cx-active-window))(cx-use-window-id 51)(cxg-clear-all-selections (cx-active-window))(cxg-add-surfaces-to-selection '(wall-gongzuomian) (cx-active-window))(cx-use-window-id 51)(cxg-clear-all-selections (cx-active-window))(cxg-add-surfaces-to-selection '(wall-gongzuomian) (cx-active-window))(cx-use-window-id 51)")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Quick Edit*Table1*PushButton4(icon_close)")')
+setup1.SendCommand(Command="(cx-use-window-id 51)(cx-use-window-id 51)(cx-use-window-id 51)(cx-use-window-id 51)(cx-set-camera-relative '(159.009 14.4676 66.6838) '(0 0 0) '(-0.0204151 0.0944297 -0.0483282) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-22.0963 -6.66168 -13.0181) '(0 0 0) '(-0.00131807 -0.0166731 0.0105787) 0 0)(cx-use-window-id 51)(handle-key \"control ??\")(cx-use-window-id 51)(dolly-camera 33.1073 -1.22614 0)(cx-use-window-id 51)(cx-set-camera-relative '(-80.4312 36.2183 37.7371) '(0 0 0) '(-0.000292569 0.0337351 -0.0212615) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-3.98264 -12.0969 -18.8253) '(0 0 0) '(-0.0055522 -0.0197211 0.0138415) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-35.7601 61.897 71.939) '(0 0 0) '(0.0173916 0.0740393 -0.0551714) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-73.5747 0.519836 -27.419) '(0 0 0) '(-0.00703555 -0.0223479 0.0182235) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(25.0974 134.638 150.262) '(0 0 0) '(0.0526494 0.117655 -0.115267) 0 0)(cx-use-window-id 51)(cxg-clear-all-selections (cx-active-window))(cxg-add-surfaces-to-selection '(wall-gongzuomian) (cx-active-window))(cx-use-window-id 51)(cx-set-camera-relative '(-66.1715 2.86188 -22.467) '(0 0 0) '(-0.000459746 -0.0181175 0.0180439) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-10.9295 -59.6067 -62.4866) '(0 0 0) '(-0.0159374 -0.0515161 0.0508923) 0 0)(cx-use-window-id 51)(handle-key \"control ??\")(cx-use-window-id 51)(dolly-camera 19.8145 34.359 0)(cx-use-window-id 51)(cx-set-camera-relative '(-24.0524 29.0793 17.9112) '(0 0 0) '(0.031572 0.00447053 -0.0135522) 0 0)")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Quick Edit*Table1*PushButton4(icon_close)")')
+setup1.SendCommand(Command="(cx-use-window-id 51)(cx-set-camera-relative '(13.7297 -23.0031 -16.5208) '(0 0 0) '(-0.00421911 -0.0142711 0.0132666) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(203.994 -57.0489 10.4951) '(0 0 0) '(0.00872704 0.0124327 -0.0132282) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-62.5209 157.945 129.983) '(0 0 0) '(0.0287312 0.10118 -0.111371) 0 0)(cx-use-window-id 51)(handle-key \"control ??\")(cx-use-window-id 51)(dolly-camera 12.5524 -24.8722 0)(cx-use-window-id 51)(cx-set-camera-relative '(-235.565 21.502 -77.3356) '(0 0 0) '(-0.035165 -0.0450378 0.0622221) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(5.30368 -11.9856 -6.87207) '(0 0 0) '(-0.00392304 -0.00576246 0.0070228) 0 0)(cx-use-window-id 51)(handle-key \"control ??\")(cx-use-window-id 51)(dolly-camera -0.52005 15.9789 0)(cx-use-window-id 51)(cxg-clear-all-selections (cx-active-window))(cxg-add-surfaces-to-selection '(wall-gongzuomian) (cx-active-window))")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Quick Edit*Table1*PushButton4(icon_close)")')
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 135, 100, 30
+    Scale = 0.00549999
+    Pan = 0, 0
+    Rotation Quaternion = -0.0190718, -0.0148534, 0.0167513, 0.999595
+    
+  END
+
+END
+
+VIEW:View 1
+  Light Angle = 50, 110
+END
+
+VIEW:View 2
+  Light Angle = 50, 110
+END
+
+VIEW:View 3
+  Light Angle = 50, 110
+END
+
+VIEW:View 4
+  Light Angle = 50, 110
+END
+
+> update
+>report save, format=preview""")
+results1.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 135, 100, 30
+    Scale = 0.00549999
+    Pan = 0, 0
+    Rotation Quaternion = -0.015738, -0.0251191, 0.0214039, 0.999361
+    
+  END
+
+END
+
+> update
+# Sending visibility action from ViewUtilities
+>show /PLANE:xy plane, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /PLANE:xy plane, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /PLANE:xy plane, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /PLANE:xy plane, view=/VIEW:View 1""")
+results1.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /PLANE:xy plane, view=/VIEW:View 1""")
+results1.SendCommand(Command="> autolegend plot=/CONTOUR:xy 1, view=VIEW:View 1")
+results1.SendCommand(Command="> autolegend plot=/PLANE:xy plane, view=VIEW:View 1")
+results1.SendCommand(Command="> autolegend plot=/DEFAULT LEGEND:Default Legend View 1, view=VIEW:View 1")
+results1.SendCommand(Command="> autolegend plot=/PLANE:xy plane, view=VIEW:View 1")
+results1.SendCommand(Command="> autolegend plot=/WIREFRAME:Wireframe, view=VIEW:View 1")
+results1.SendCommand(Command="> autolegend plot=/PLANE:xy plane, view=VIEW:View 1")
+results1.SendCommand(Command="> autolegend plot=/DEFAULT LEGEND:Default Legend View 1, view=VIEW:View 1")
+system3 = GetSystem(Name="Geom")
+geometry1 = system3.GetContainer(ComponentName="Geometry")
+geometry1.Edit()
+geometry1.Exit()
+geometry1.Edit()
+Save(Overwrite=True)
+system4 = GetSystem(Name="SYS 1")
+meshComponent1 = system4.GetComponent(Name="Mesh")
+meshComponent1.Update(AllDependencies=True)
+Save(Overwrite=True)
+meshComponent1.Update(AllDependencies=True)
+setupComponent1 = system2.GetComponent(Name="Setup")
+setupComponent1.Update(AllDependencies=True)
+setup1.SendCommand(Command="(cx-use-window-id 51)(cx-set-camera-relative '(141.733 -110.441 -32.8716) '(0 0 0) '(-0.0210971 -0.0333521 0.0375512) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(139.712 -45.0419 -2.50208) '(0 0 0) '(0 0 0) 0 0)(cx-use-window-id 51)(handle-key \"??\")(cx-use-window-id 51)(handle-key \"??\")")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "MenuBar*FileMenu*Recorded Mesh Operations...")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Recorded Mesh Operations and Incoming Zones*PushButton5(Match Zone Names)")(cx-gui-do cx-activate-item "Match Zone Names*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Recorded Mesh Operations and Incoming Zones*PushButton5(Match Zone Names)")(cx-gui-do cx-activate-item "Match Zone Names*PanelButtons*PushButton1(OK)")(cx-gui-do cx-activate-item "Question*OK")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Information*OK")(cx-gui-do cx-activate-item "Recorded Mesh Operations and Incoming Zones*PanelButtons*PushButton1(Close)")')
+setup1.SendCommand(Command="(cx-use-window-id 51)(cx-set-camera-relative '(-307.349 -1544.15 -50.5991) '(0 0 0) '(0.528467 -0.246463 1.38713) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-568.5 12.4301 -129.513) '(0 0 0) '(0.0182077 -0.136269 0.0576496) 0 0)")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "MenuBar*FileMenu*Close Fluent")')
+fluentLauncherSettings1.SetEntityProperties(Properties=Set(EnvPath={}))
+setup1.Edit()
+setup1.SendCommand(Command='(cx-gui-do cx-activate-tab-index "NavigationPane*Frame1(TreeTab)" 0)(cx-gui-do cx-activate-tab-index "NavigationPane*Frame1(TreeTab)" 1)')
+setup1.SendCommand(Command='(%py-exec "preferences.fixState()")')
+setup1.SendCommand(Command="(%py-exec \"preferences.setState({r'Appearance': None,r'GPUApp': None,r'General': None,r'Graphics': None,r'MatProApp': None,r'MeshingWorkflow': None,r'Navigation': None,r'PrjApp': None,r'Simulation': None,r'TurboWorkflow': None,})\")")
+setup1.SendCommand(Command='/file/set-tui-version "22.1"(cx-gui-do cx-activate-item "Information*Cancel")(cx-gui-do cx-activate-item "Key Behavioral Changes*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command="(cx-use-window-id 51)(cx-set-camera-relative '(-331.736 -1124.57 372.149) '(0 0 0) '(0.498682 0.185519 0.950801) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-446.147 -446.206 -553.712) '(0 0 0) '(0.0190294 -0.569037 0.495236) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(122.875 -39.6974 -14.3633) '(0 0 0) '(-0.00348475 -0.0137037 0.00463718) 0 0)(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Solution|Run Calculation\"))")
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Run Calculation"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Run Calculation"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Run Calculation"))')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Run Calculation*Table1*Table6(Solution Advancement)*Table1*PushButton1(Calculate)")(cx-gui-do cx-activate-item "Question*OK")(cx-gui-do cx-activate-item "Question*OK")(cx-gui-do cx-activate-item "Error*OK")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Information*OK")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Run Calculation*Table1*Table6(Solution Advancement)*Table1*PushButton1(Calculate)")(cx-gui-do cx-activate-item "Error*OK")')
+setup1.SendCommand(Command="(cx-gui-do cx-activate-item \"Information*OK\")(cx-use-window-id 51)(cx-set-camera-relative '(198.805 261.991 80.2842) '(0 0 0) '(0.0220991 0.117425 -0.0472889) 0 0)(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Setup|General\"))")
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|General"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|General"))')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "General*Table1*ButtonBox1(Mesh)*PushButton3(Check)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "General*Table1*ButtonBox1(Mesh)*PushButton3(Check)")')
+setup1.SendCommand(Command="(cx-gui-do cx-activate-item \"MenuBar*FileMenu*Close Fluent\")(cx-gui-do cx-set-toggle-button2 \"Settings have changed!*Table1*ToggleBox2*Don't Save changes and exit\" #t)(cx-gui-do cx-activate-item \"Settings have changed!*Table1*ToggleBox2*Don't Save changes and exit\")(cx-gui-do cx-activate-item \"Settings have changed!*PanelButtons*PushButton1(OK)\")")
+Save(Overwrite=True)
+meshComponent1.Update(AllDependencies=True)
+resultsComponent1 = system1.GetComponent(Name="Results")
+resultsComponent1.Refresh()
+setupComponent1.Update(AllDependencies=True)
+geometry1.Exit()
+setup1.SendCommand(Command='(cx-gui-do cx-activate-tab-index "NavigationPane*Frame1(TreeTab)" 0)(cx-gui-do cx-activate-tab-index "NavigationPane*Frame1(TreeTab)" 1)')
+setup1.SendCommand(Command='(%py-exec "preferences.fixState()")')
+setup1.SendCommand(Command="(%py-exec \"preferences.setState({r'Appearance': None,r'GPUApp': None,r'General': None,r'Graphics': None,r'MatProApp': None,r'MeshingWorkflow': None,r'Navigation': None,r'PrjApp': None,r'Simulation': None,r'TurboWorkflow': None,})\")")
+setup1.SendCommand(Command='/file/set-tui-version "22.1"')
+fluentLauncherSettings1.SetEntityProperties(Properties=Set(EnvPath={}))
+setup1.Edit()
+setup1.SendCommand(Command='(cx-gui-do cx-activate-tab-index "NavigationPane*Frame1(TreeTab)" 0)(cx-gui-do cx-activate-tab-index "NavigationPane*Frame1(TreeTab)" 1)')
+setup1.SendCommand(Command='(%py-exec "preferences.fixState()")')
+setup1.SendCommand(Command="(%py-exec \"preferences.setState({r'Appearance': None,r'GPUApp': None,r'General': None,r'Graphics': None,r'MatProApp': None,r'MeshingWorkflow': None,r'Navigation': None,r'PrjApp': None,r'Simulation': None,r'TurboWorkflow': None,})\")")
+setup1.SendCommand(Command='/file/set-tui-version "22.1"(cx-gui-do cx-activate-item "Information*OK")(cx-gui-do cx-activate-item "Key Behavioral Changes*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command='(%py-exec "preferences.General.KeyBehavioralChangesMessage.setState(True)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|General"))')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "General*Table1*ButtonBox1(Mesh)*PushButton3(Check)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "General*Table1*ButtonBox1(Mesh)*PushButton3(Check)")')
+setup1.SendCommand(Command="(cx-use-window-id 51)(cx-set-camera-relative '(-626.131 -1543.3 -33.6874) '(0 0 0) '(0.460344 -0.232271 1.37918) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-268.292 184.669 129.871) '(0 0 0) '(0.0623702 0.17536 -0.119752) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(210.061 -9.35504 90.5133) '(0 0 0) '(0.0242383 0.0478015 -0.044867) 0 0)(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Setup|Materials\"))")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "MenuBar*FileMenu*Close Fluent")')
+geometry1.Edit()
+mesh1 = system4.GetContainer(ComponentName="Mesh")
+mesh1.Edit()
+meshComponent1.Update(AllDependencies=True)
+setupComponent1.Update(AllDependencies=True)
+setup1.SendCommand(Command='(cx-gui-do cx-activate-tab-index "NavigationPane*Frame1(TreeTab)" 0)(cx-gui-do cx-activate-tab-index "NavigationPane*Frame1(TreeTab)" 1)')
+setup1.SendCommand(Command='(%py-exec "preferences.fixState()")')
+setup1.SendCommand(Command="(%py-exec \"preferences.setState({r'Appearance': None,r'GPUApp': None,r'General': None,r'Graphics': None,r'MatProApp': None,r'MeshingWorkflow': None,r'Navigation': None,r'PrjApp': None,r'Simulation': None,r'TurboWorkflow': None,})\")")
+setup1.SendCommand(Command='/file/set-tui-version "22.1"')
+fluentLauncherSettings1.SetEntityProperties(Properties=Set(EnvPath={}))
+setup1.Edit()
+setup1.SendCommand(Command='(cx-gui-do cx-activate-tab-index "NavigationPane*Frame1(TreeTab)" 0)(cx-gui-do cx-activate-tab-index "NavigationPane*Frame1(TreeTab)" 1)')
+setup1.SendCommand(Command='(%py-exec "preferences.fixState()")')
+setup1.SendCommand(Command="(%py-exec \"preferences.setState({r'Appearance': None,r'GPUApp': None,r'General': None,r'Graphics': None,r'MatProApp': None,r'MeshingWorkflow': None,r'Navigation': None,r'PrjApp': None,r'Simulation': None,r'TurboWorkflow': None,})\")")
+setup1.SendCommand(Command='/file/set-tui-version "22.1"(cx-gui-do cx-activate-item "Information*OK")(cx-gui-do cx-activate-item "Key Behavioral Changes*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command="(cx-use-window-id 51)(cx-set-camera-relative '(-346.126 -1277.14 279.076) '(0 0 0) '(0.450954 0.0818418 1.1125) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-283.131 -363.61 -594.212) '(0 0 0) '(-0.0491105 -0.596636 0.363913) 0 0)")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "General*Table1*ButtonBox1(Mesh)*PushButton3(Check)")')
+setup1.SendCommand(Command="(cx-use-window-id 51)(cx-set-camera-relative '(-369.311 268.147 303.551) '(0 0 0) '(0.150002 0.353194 -0.139909) 0 0)")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "General*Table1*ButtonBox1(Mesh)*PushButton2(Display)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-toggle-button2 "Mesh Display*Table1*Frame1*Frame1*ToggleBox1(Options)*CheckButton2(Edges)" #t)(cx-gui-do cx-activate-item "Mesh Display*Table1*Frame1*Frame1*ToggleBox1(Options)*CheckButton2(Edges)")(cx-gui-do cx-activate-item "Mesh Display*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Mesh Display*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command="(cx-use-window-id 51)(cx-set-camera-relative '(229.374 -45.7889 110.022) '(0 0 0) '(-0.00115873 0.069142 -0.049328) 0 0)(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Setup|General\"))")
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|General"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+geometry1.Exit()
+setup1.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|General"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup"))')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "MenuBar*FileMenu*Close Fluent")')
+mesh1.Exit()
+fluentLauncherSettings1.SetEntityProperties(Properties=Set(EnvPath={}))
+setup1.Edit()
+setup1.SendCommand(Command='(cx-gui-do cx-activate-tab-index "NavigationPane*Frame1(TreeTab)" 0)(cx-gui-do cx-activate-tab-index "NavigationPane*Frame1(TreeTab)" 1)')
+setup1.SendCommand(Command='(%py-exec "preferences.fixState()")')
+setup1.SendCommand(Command="(%py-exec \"preferences.setState({r'Appearance': None,r'GPUApp': None,r'General': None,r'Graphics': None,r'MatProApp': None,r'MeshingWorkflow': None,r'Navigation': None,r'PrjApp': None,r'Simulation': None,r'TurboWorkflow': None,})\")")
+setup1.SendCommand(Command='/file/set-tui-version "22.1"(cx-gui-do cx-activate-item "Information*Cancel")(cx-gui-do cx-activate-item "Key Behavioral Changes*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command="(cx-use-window-id 51)(cx-set-camera-relative '(-611.431 -1637.09 -284.237) '(0 0 0) '(0.60428 -0.510708 1.47497) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-113.371 7.13123 -84.6538) '(0 0 0) '(-0.0211803 -0.0915578 0.0160481) 0 0)")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "General*Table1*ButtonBox1(Mesh)*PushButton2(Display)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-toggle-button2 "Mesh Display*Table1*Frame1*Frame1*ToggleBox1(Options)*CheckButton2(Edges)" #t)(cx-gui-do cx-activate-item "Mesh Display*Table1*Frame1*Frame1*ToggleBox1(Options)*CheckButton2(Edges)")(cx-gui-do cx-activate-item "Mesh Display*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Mesh Display*PanelButtons*PushButton2(Cancel)")')
+setup1.SendCommand(Command="(cx-use-window-id 51)(cx-set-camera-relative '(209.635 26.514 225.166) '(0 0 0) '(0.0436989 0.241943 -0.0616752) 0 0)")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "General*Table1*ButtonBox1(Mesh)*PushButton3(Check)")')
+solutionComponent1 = system2.GetComponent(Name="Solution")
+solutionComponent1.Update(AllDependencies=True)
+template1 = GetTemplate(TemplateName="Mesh")
+system5 = template1.CreateSystem(
+    Position="Below",
+    RelativeTo=system4)
+geometryComponent1 = system5.GetComponent(Name="Geometry")
+geometryComponent2 = system3.GetComponent(Name="Geometry")
+geometryComponent1.ReplaceWithShare(
+    TargetSystem=system5,
+    ComponentToShare=geometryComponent2,
+    SourceSystem=system3)
+meshComponent2 = system5.GetComponent(Name="Mesh")
+meshComponent2.Refresh()
+mesh2 = system5.GetContainer(ComponentName="Mesh")
+mesh2.Edit()
+Save(Overwrite=True)
+system4.Delete()
+meshComponent2.TransferData(TargetComponent=setupComponent1)
+meshComponent2.Update(AllDependencies=True)
+setupComponent1.Refresh()
+fluentLauncherSettings1.SetEntityProperties(Properties=Set(EnvPath={}))
+setup1.Edit()
+setup1.SendCommand(Command='(cx-gui-do cx-activate-tab-index "NavigationPane*Frame1(TreeTab)" 0)(cx-gui-do cx-activate-tab-index "NavigationPane*Frame1(TreeTab)" 1)')
+setup1.SendCommand(Command='(%py-exec "preferences.fixState()")')
+setup1.SendCommand(Command="(%py-exec \"preferences.setState({r'Appearance': None,r'GPUApp': None,r'General': None,r'Graphics': None,r'MatProApp': None,r'MeshingWorkflow': None,r'Navigation': None,r'PrjApp': None,r'Simulation': None,r'TurboWorkflow': None,})\")")
+setup1.SendCommand(Command='/file/set-tui-version "22.1"(cx-gui-do cx-activate-item "Information*OK")(cx-gui-do cx-activate-item "Key Behavioral Changes*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command='(%py-exec "preferences.General.KeyBehavioralChangesMessage.setState(True)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "General*Table1*ButtonBox1(Mesh)*PushButton3(Check)")')
+setup1.SendCommand(Command="(cx-use-window-id 51)(cx-set-camera-relative '(-558.064 -1526.48 10.9489) '(0 0 0) '(0.518129 -0.195776 1.3592) 0 0)")
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "General*Table1*ButtonBox1(Mesh)*PushButton2(Display)")')
+setup1.SendCommand(Command='(cx-gui-do cx-set-toggle-button2 "Mesh Display*Table1*Frame1*Frame1*ToggleBox1(Options)*CheckButton2(Edges)" #t)(cx-gui-do cx-activate-item "Mesh Display*Table1*Frame1*Frame1*ToggleBox1(Options)*CheckButton2(Edges)")(cx-gui-do cx-activate-item "Mesh Display*PanelButtons*PushButton1(OK)")')
+setup1.SendCommand(Command='(cx-gui-do cx-activate-item "Mesh Display*PanelButtons*PushButton2(Cancel)")')
+solutionComponent1.Update(AllDependencies=True)
+template2 = GetTemplate(TemplateName="FLUENT")
+system6 = template2.CreateSystem(
+    Position="Below",
+    RelativeTo=system2)
+setupComponent2 = system6.GetComponent(Name="Setup")
+meshComponent2.TransferData(TargetComponent=setupComponent2)
+setupComponent2.Refresh()
+setup2 = system6.GetContainer(ComponentName="Setup")
+fluentLauncherSettings2 = setup2.GetFluentLauncherSettings()
+fluentLauncherSettings2.SetEntityProperties(Properties=Set(EnvPath={}, RunParallel=True))
+setup2.Edit()
+setup2.SendCommand(Command='(cx-gui-do cx-activate-tab-index "NavigationPane*Frame1(TreeTab)" 0)(cx-gui-do cx-activate-tab-index "NavigationPane*Frame1(TreeTab)" 1)')
+setup2.SendCommand(Command='(%py-exec "preferences.fixState()")')
+setup2.SendCommand(Command="(%py-exec \"preferences.setState({r'Appearance': None,r'GPUApp': None,r'General': None,r'Graphics': None,r'MatProApp': None,r'MeshingWorkflow': None,r'Navigation': None,r'PrjApp': None,r'Simulation': None,r'TurboWorkflow': None,})\")")
+setup2.SendCommand(Command='/file/set-tui-version "22.1"(cx-gui-do cx-activate-item "Information*Cancel")(cx-gui-do cx-activate-item "Key Behavioral Changes*PanelButtons*PushButton2(Cancel)")')
+setup2.SendCommand(Command="(cx-use-window-id 51)(cx-set-camera-relative '(-632.7 -1929.34 386.964) '(0 0 0) '(0.432525 -0.118554 1.30564) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-152.08 -208.723 -421.113) '(0 0 0) '(-0.0159794 -0.199324 0.111715) 0 0)")
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "General*Table1*ButtonBox1(Mesh)*PushButton3(Check)")')
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "General*Table1*ButtonBox1(Mesh)*PushButton2(Display)")')
+setup2.SendCommand(Command='(cx-gui-do cx-set-toggle-button2 "Mesh Display*Table1*Frame1*Frame1*ToggleBox1(Options)*CheckButton2(Edges)" #t)(cx-gui-do cx-activate-item "Mesh Display*Table1*Frame1*Frame1*ToggleBox1(Options)*CheckButton2(Edges)")(cx-gui-do cx-set-toggle-button2 "Mesh Display*Table1*Frame1*Frame1*ToggleBox1(Options)*CheckButton2(Edges)" #f)(cx-gui-do cx-activate-item "Mesh Display*Table1*Frame1*Frame1*ToggleBox1(Options)*CheckButton2(Edges)")(cx-gui-do cx-activate-item "Mesh Display*PanelButtons*PushButton2(Cancel)")')
+setup2.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Models|Energy (Off)"))(cx-gui-do cx-list-tree-right-click "NavigationPane*Frame2*Table1*List_Tree2" )')
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "MenuBar*PopupMenuTree-Energy (Off)*Edit...")')
+setup2.SendCommand(Command='(cx-gui-do cx-set-toggle-button2 "Energy*Table1(Energy)*ToggleBox1*CheckButton1(Energy Equation)" #t)(cx-gui-do cx-activate-item "Energy*Table1(Energy)*ToggleBox1*CheckButton1(Energy Equation)")(cx-gui-do cx-activate-item "Energy*PanelButtons*PushButton1(OK)")')
+setup2.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Models|Viscous (SST k-omega)"))(cx-gui-do cx-list-tree-right-click "NavigationPane*Frame2*Table1*List_Tree2" )')
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "MenuBar*PopupMenuTree-Viscous (SST k-omega)*Edit...")')
+setup2.SendCommand(Command='(cx-gui-do cx-set-toggle-button2 "Viscous Model*Table1*ToggleBox1(Model)*k-epsilon (2 eqn)" #t)(cx-gui-do cx-activate-item "Viscous Model*Table1*ToggleBox1(Model)*k-epsilon (2 eqn)")(cx-gui-do cx-set-toggle-button2 "Viscous Model*Table1*ToggleBox6(k-epsilon Model)*RNG" #t)(cx-gui-do cx-activate-item "Viscous Model*Table1*ToggleBox6(k-epsilon Model)*RNG")(cx-gui-do cx-activate-item "Viscous Model*PanelButtons*PushButton1(OK)")')
+setup2.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Models|Species (Off)"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Models|Species (Off)"))(cx-gui-do cx-list-tree-right-click "NavigationPane*Frame2*Table1*List_Tree2" )')
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "MenuBar*PopupMenuTree-Species (Off)*Edit...")(cx-gui-do cx-activate-tab-index "Species Model*Table2*Frame3" 0)(cx-gui-do cx-activate-tab-index "Species Model*Table2*Frame3" 1)(cx-gui-do cx-activate-tab-index "Species Model*Table2*Frame3" 0)(cx-gui-do cx-activate-tab-index "Species Model*Table2*Frame3" 2)(cx-gui-do cx-activate-tab-index "Species Model*Table2*Frame3" 0)(cx-gui-do cx-activate-tab-index "Species Model*Table2*Frame4(PDF Table Creation)" 0)(cx-gui-do cx-activate-tab-index "Species Model*Table2*Frame4(PDF Table Creation)" 1)(cx-gui-do cx-activate-tab-index "Species Model*Table2*Frame4(PDF Table Creation)" 0)(cx-gui-do cx-activate-tab-index "Species Model*Table2*Frame4(PDF Table Creation)" 2)(cx-gui-do cx-activate-tab-index "Species Model*Table2*Frame4(PDF Table Creation)" 0)(cx-gui-do cx-activate-tab-index "Species Model*Table2*Frame4(PDF Table Creation)" 3)(cx-gui-do cx-activate-tab-index "Species Model*Table2*Frame4(PDF Table Creation)" 0)(cx-gui-do cx-activate-tab-index "Species Model*Table2*Frame4(PDF Table Creation)" 4)(cx-gui-do cx-activate-tab-index "Species Model*Table2*Frame4(PDF Table Creation)" 0)(cx-gui-do cx-activate-tab-index "Species Model*Table2*Frame4(PDF Table Creation)" 5)(cx-gui-do cx-activate-tab-index "Species Model*Table2*Frame4(PDF Table Creation)" 0)(cx-gui-do cx-activate-tab-index "Species Model*Table2*Frame4(PDF Table Creation)" 6)(cx-gui-do cx-activate-tab-index "Species Model*Table2*Frame4(PDF Table Creation)" 0)')
+setup2.SendCommand(Command="(cx-gui-do cx-set-toggle-button2 \"Species Model*Table1*ToggleBox1(Model)*Species Transport\" #t)(cx-gui-do cx-activate-item \"Species Model*Table1*ToggleBox1(Model)*Species Transport\")(cx-gui-do cx-set-list-selections \"Species Model*Table2*Table1(Mixture Properties)*DropDownList2(Mixture Material)\" '( 24))")
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Species Model*Table2*Table1(Mixture Properties)*DropDownList2(Mixture Material)")')
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Species Model*PanelButtons*PushButton4(Apply)")')
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Species Model*PanelButtons*PushButton1(OK)")')
+setup2.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Models|Species (Species Transport)"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Cell Zone Conditions"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Cell Zone Conditions"))')
+setup2.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Cell Zone Conditions"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup2.SendCommand(Command="(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Setup|Cell Zone Conditions\"))(cx-gui-do cx-set-list-selections \"Boundary Conditions*Table1*List2(Zone)\" '( 3))(cx-gui-do cx-activate-item \"Boundary Conditions*Table1*List2(Zone)\")")
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Boundary Conditions*Table1*Table3*Table4*ButtonBox1*PushButton1(Edit)")(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 1)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 2)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 2)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 3)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 4)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 5)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 6)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 7)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 8)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)')
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Fluid*PanelButtons*PushButton2(Cancel)")')
+setup2.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions"))')
+setup2.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup2.SendCommand(Command="(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Setup|Boundary Conditions\"))(cx-gui-do cx-set-list-selections \"Boundary Conditions*Table1*List2(Zone)\" '( 9))(cx-gui-do cx-activate-item \"Boundary Conditions*Table1*List2(Zone)\")(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Setup|Cell Zone Conditions\"))")
+setup2.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Cell Zone Conditions"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup2.SendCommand(Command="(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Setup|Cell Zone Conditions\"))(cx-gui-do cx-set-list-selections \"Boundary Conditions*Table1*List2(Zone)\" '( 3))(cx-gui-do cx-activate-item \"Boundary Conditions*Table1*List2(Zone)\")")
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Boundary Conditions*Table1*Table3*Table4*ButtonBox1*PushButton1(Edit)")')
+setup2.SendCommand(Command='(cx-gui-do cx-enable-apply-button "Fluid")(cx-gui-do cx-set-toggle-button2 "Fluid*Frame2*Table2*CheckButton7(Source Terms)" #t)(cx-gui-do cx-activate-item "Fluid*Frame2*Table2*CheckButton7(Source Terms)")(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 6)')
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Fluid*Frame2*Table3*Frame1*Frame8(Source Terms)*Table1*Table1*Table7*PushButton2(Edit)")(cx-gui-do cx-set-integer-entry "ch4 sources*Table1*IntegerEntry1(Number of ch4 sources)" 1)(cx-gui-do cx-activate-item "ch4 sources*Table1*IntegerEntry1(Number of ch4 sources)")(cx-gui-do cx-activate-item "ch4 sources*PanelButtons*PushButton1(OK)")')
+setup2.SendCommand(Command="(cx-gui-do cx-activate-item \"Fluid*Frame2*Table3*Frame1*Frame8(Source Terms)*Table1*Table1*Table7*PushButton2(Edit)\")(cx-gui-do cx-set-expression-entry \"ch4 sources*Table1*Table2*Table1*ExpressionEntry1(1)\" '(\"0\" . 0))(cx-gui-do cx-set-expression-entry \"ch4 sources*Table1*Table2*Table1*ExpressionEntry1(1)\" '(\"1.5e-8\" . 0))(cx-gui-do cx-activate-item \"ch4 sources*PanelButtons*PushButton1(OK)\")")
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Fluid*PanelButtons*PushButton1(OK)")')
+setup2.SendCommand(Command='(cx-gui-do cx-enable-apply-button "Fluid")(cx-gui-do cx-set-toggle-button2 "Fluid*Frame2*Table2*CheckButton5(Laminar Zone)" #t)(cx-gui-do cx-activate-item "Fluid*Frame2*Table2*CheckButton5(Laminar Zone)")(cx-gui-do cx-activate-item "Fluid*PanelButtons*PushButton1(OK)")')
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Fluid*PanelButtons*PushButton2(Cancel)")')
+setup2.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Boundary Conditions*Table1*List2(Zone)\" '( 4))(cx-gui-do cx-activate-item \"Boundary Conditions*Table1*List2(Zone)\")")
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Boundary Conditions*Table1*Table3*Table4*ButtonBox1*PushButton1(Edit)")(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 1)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 2)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 2)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 3)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 4)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 5)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 6)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 7)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 8)(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 0)')
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Fluid*PanelButtons*PushButton2(Cancel)")')
+setup2.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Boundary Conditions*Table1*List2(Zone)\" '( 3))(cx-gui-do cx-activate-item \"Boundary Conditions*Table1*List2(Zone)\")")
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Boundary Conditions*Table1*Table3*Table4*ButtonBox1*PushButton1(Edit)")')
+setup2.SendCommand(Command="(cx-gui-do cx-enable-apply-button \"Fluid\")(cx-gui-do cx-set-toggle-button2 \"Fluid*Frame2*Table2*CheckButton3(Porous Zone)\" #t)(cx-gui-do cx-activate-item \"Fluid*Frame2*Table2*CheckButton3(Porous Zone)\")(cx-gui-do cx-activate-tab-index \"Fluid*Frame2*Table3*Frame1\" 2)(cx-gui-do cx-set-expression-entry \"Fluid*Frame2*Table3*Frame1*Frame4(Porous Zone)*Table1*Table3*Table11(Fluid Porosity)*Table1*ExpressionEntry1(Porosity)\" '(\"0.1\" . 0))(cx-gui-do cx-activate-item \"Fluid*PanelButtons*PushButton1(OK)\")")
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Fluid*PanelButtons*PushButton2(Cancel)")')
+setup2.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Boundary Conditions*Table1*List2(Zone)\" '( 4))(cx-gui-do cx-activate-item \"Boundary Conditions*Table1*List2(Zone)\")")
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Boundary Conditions*Table1*Table3*Table4*ButtonBox1*PushButton1(Edit)")')
+setup2.SendCommand(Command='(cx-gui-do cx-enable-apply-button "Fluid")(cx-gui-do cx-set-toggle-button2 "Fluid*Frame2*Table2*CheckButton7(Source Terms)" #t)(cx-gui-do cx-activate-item "Fluid*Frame2*Table2*CheckButton7(Source Terms)")(cx-gui-do cx-activate-tab-index "Fluid*Frame2*Table3*Frame1" 6)')
+setup2.SendCommand(Command="(cx-gui-do cx-activate-item \"Fluid*Frame2*Table3*Frame1*Frame8(Source Terms)*Table1*Table1*Table7*PushButton2(Edit)\")(cx-gui-do cx-set-integer-entry \"ch4 sources*Table1*IntegerEntry1(Number of ch4 sources)\" 1)(cx-gui-do cx-activate-item \"ch4 sources*Table1*IntegerEntry1(Number of ch4 sources)\")(cx-gui-do cx-set-expression-entry \"ch4 sources*Table1*Table2*Table1*ExpressionEntry1(1)\" '(\"0\" . 0))(cx-gui-do cx-set-expression-entry \"ch4 sources*Table1*Table2*Table1*ExpressionEntry1(1)\" '(\"2.685e-7\" . 0))(cx-gui-do cx-set-expression-entry \"ch4 sources*Table1*Table2*Table1*ExpressionEntry1(1)\" '(\"2.685e-7\" . 0))(cx-gui-do cx-activate-item \"ch4 sources*PanelButtons*PushButton1(OK)\")")
+setup2.SendCommand(Command="(cx-gui-do cx-set-toggle-button2 \"Fluid*Frame2*Table2*CheckButton3(Porous Zone)\" #t)(cx-gui-do cx-activate-item \"Fluid*Frame2*Table2*CheckButton3(Porous Zone)\")(cx-gui-do cx-activate-tab-index \"Fluid*Frame2*Table3*Frame1\" 2)(cx-gui-do cx-set-expression-entry \"Fluid*Frame2*Table3*Frame1*Frame4(Porous Zone)*Table1*Table3*Table11(Fluid Porosity)*Table1*ExpressionEntry1(Porosity)\" '(\"0.4\" . 0))(cx-gui-do cx-set-expression-entry \"Fluid*Frame2*Table3*Frame1*Frame4(Porous Zone)*Table1*Table3*Table11(Fluid Porosity)*Table1*ExpressionEntry1(Porosity)\" '(\"0.4\" . 0))(cx-gui-do cx-activate-item \"Fluid*PanelButtons*PushButton1(OK)\")")
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Fluid*PanelButtons*PushButton1(OK)")(cx-gui-do cx-enable-apply-button "Fluid")')
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Fluid*PanelButtons*PushButton2(Cancel)")')
+setup2.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions"))')
+setup2.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|Boundary Conditions"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup2.SendCommand(Command="(cx-gui-do cx-set-list-tree-selections \"NavigationPane*Frame2*Table1*List_Tree2\" (list \"Setup|Boundary Conditions\"))(cx-gui-do cx-set-list-selections \"Boundary Conditions*Table1*List2(Zone)\" '( 9))(cx-gui-do cx-activate-item \"Boundary Conditions*Table1*List2(Zone)\")")
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Boundary Conditions*Table1*Table3*Table4*ButtonBox1*PushButton1(Edit)")(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 0)(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 1)(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 0)(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 2)(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 0)(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 3)(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 0)(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 4)(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 0)(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 5)(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 0)(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 6)(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 0)(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 7)(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 0)(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 8)(cx-gui-do cx-activate-tab-index "Velocity Inlet*Frame2*Frame2" 0)')
+setup2.SendCommand(Command="(cx-gui-do cx-enable-apply-button \"Velocity Inlet\")(cx-gui-do cx-set-expression-entry \"Velocity Inlet*Frame2*Frame2*Frame1(Momentum)*Table1*Table8*ExpressionEntry1(Velocity Magnitude)\" '(\"2.1\" . 0))(cx-gui-do cx-activate-tab-index \"Velocity Inlet*Frame2*Frame2\" 3)(cx-gui-do cx-set-expression-entry \"Velocity Inlet*Frame2*Frame2*Frame4(Species)*Table1*Table2(Species Mass Fractions)*Table2*ExpressionEntry1(o2)\" '(\"0.23\" . 0))(cx-gui-do cx-activate-item \"Velocity Inlet*PanelButtons*PushButton1(OK)\")")
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Velocity Inlet*PanelButtons*PushButton2(Cancel)")')
+setup2.SendCommand(Command="(cx-gui-do cx-set-list-selections \"Boundary Conditions*Table1*List2(Zone)\" '( 20))(cx-gui-do cx-activate-item \"Boundary Conditions*Table1*List2(Zone)\")(cx-gui-do cx-set-list-selections \"Boundary Conditions*Table1*Table3*DropDownList2(Type)\" '( 7))")
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Boundary Conditions*Table1*Table3*DropDownList2(Type)")')
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Outflow*PanelButtons*PushButton1(OK)")')
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Outflow*PanelButtons*PushButton2(Cancel)")')
+setup2.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Controls"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Methods"))')
+setup2.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Methods"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup2.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Methods"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Controls"))')
+setup2.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Controls"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup2.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Controls"))')
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Solution Controls*Table1*Table2*PushButton6(Advanced)")(cx-gui-do cx-activate-tab-index "Advanced Solution Controls*Frame1" 0)(cx-gui-do cx-activate-tab-index "Advanced Solution Controls*Frame1" 1)(cx-gui-do cx-activate-tab-index "Advanced Solution Controls*Frame1" 0)(cx-gui-do cx-activate-tab-index "Advanced Solution Controls*Frame1" 2)(cx-gui-do cx-activate-tab-index "Advanced Solution Controls*Frame1" 0)')
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Advanced Solution Controls*Frame1*Frame1(Multigrid)*PushButton2(Default)")')
+setup2.SendCommand(Command='(cx-gui-do cx-activate-tab-index "Advanced Solution Controls*Frame1" 1)(cx-gui-do cx-activate-tab-index "Advanced Solution Controls*Frame1" 2)(cx-gui-do cx-set-toggle-button2 "Advanced Solution Controls*Frame1*Frame3(Expert)*Table3*Table2(Pseudo Transient Method Usage)*CheckButton13" #t)(cx-gui-do cx-activate-item "Advanced Solution Controls*Frame1*Frame3(Expert)*Table3*Table2(Pseudo Transient Method Usage)*CheckButton13")(cx-gui-do cx-set-toggle-button2 "Advanced Solution Controls*Frame1*Frame3(Expert)*Table3*Table2(Pseudo Transient Method Usage)*CheckButton17" #t)(cx-gui-do cx-activate-item "Advanced Solution Controls*Frame1*Frame3(Expert)*Table3*Table2(Pseudo Transient Method Usage)*CheckButton17")(cx-gui-do cx-set-toggle-button2 "Advanced Solution Controls*Frame1*Frame3(Expert)*Table3*Table2(Pseudo Transient Method Usage)*CheckButton21" #t)(cx-gui-do cx-activate-item "Advanced Solution Controls*Frame1*Frame3(Expert)*Table3*Table2(Pseudo Transient Method Usage)*CheckButton21")(cx-gui-do cx-set-toggle-button2 "Advanced Solution Controls*Frame1*Frame3(Expert)*Table3*Table2(Pseudo Transient Method Usage)*CheckButton25" #t)(cx-gui-do cx-activate-item "Advanced Solution Controls*Frame1*Frame3(Expert)*Table3*Table2(Pseudo Transient Method Usage)*CheckButton25")(cx-gui-do cx-activate-item "Advanced Solution Controls*PanelButtons*PushButton1(OK)")')
+setup2.SendCommand(Command="(cx-gui-do cx-set-real-entry-list \"Solution Controls*Table1*Table1*Table7(Pseudo Transient Explicit Relaxation Factors)*RealEntry9(o2)\" '( 0.5))(cx-gui-do cx-activate-item \"Solution Controls*Table1*Table1*Table7(Pseudo Transient Explicit Relaxation Factors)*RealEntry9(o2)\")")
+setup2.SendCommand(Command="(cx-gui-do cx-set-real-entry-list \"Solution Controls*Table1*Table1*Table7(Pseudo Transient Explicit Relaxation Factors)*RealEntry8(ch4)\" '( 0.5))(cx-gui-do cx-activate-item \"Solution Controls*Table1*Table1*Table7(Pseudo Transient Explicit Relaxation Factors)*RealEntry8(ch4)\")")
+setup2.SendCommand(Command="(cx-gui-do cx-set-real-entry-list \"Solution Controls*Table1*Table1*Table7(Pseudo Transient Explicit Relaxation Factors)*RealEntry1(Pressure)\" '( 0.2))(cx-gui-do cx-activate-item \"Solution Controls*Table1*Table1*Table7(Pseudo Transient Explicit Relaxation Factors)*RealEntry1(Pressure)\")")
+setup2.SendCommand(Command="(cx-gui-do cx-set-real-entry-list \"Solution Controls*Table1*Table1*Table7(Pseudo Transient Explicit Relaxation Factors)*RealEntry12(Energy)\" '( 0.5))(cx-gui-do cx-activate-item \"Solution Controls*Table1*Table1*Table7(Pseudo Transient Explicit Relaxation Factors)*RealEntry12(Energy)\")")
+setup2.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Initialization"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Initialization"))')
+setup2.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Initialization"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup2.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Initialization"))')
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Solution Initialization*Table1*Frame12*PushButton2(Initialize)")')
+setup2.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Run Calculation"))')
+setup2.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Run Calculation"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup2.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Solution|Run Calculation"))(cx-gui-do cx-set-integer-entry "Run Calculation*Table1*Table3(Parameters)*Table1*Table1*IntegerEntry1(Number of Iterations)" 300)(cx-gui-do cx-activate-item "Run Calculation*Table1*Table3(Parameters)*Table1*Table1*IntegerEntry1(Number of Iterations)")')
+results1.Exit()
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Run Calculation*Table1*Table6(Solution Advancement)*Table1*PushButton1(Calculate)")')
+mesh2.Exit()
+template3 = GetTemplate(TemplateName="Results")
+system7 = template3.CreateSystem(
+    Position="Right",
+    RelativeTo=system6)
+solutionComponent2 = system6.GetComponent(Name="Solution")
+resultsComponent2 = system7.GetComponent(Name="Results")
+solutionComponent2.TransferData(TargetComponent=resultsComponent2)
+system2.Delete()
+system1.Delete()
+results2 = system7.GetContainer(ComponentName="Results")
+results2.Edit()
+results2.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 135, 100, 30
+    Scale = 0.00563749
+    Pan = 0, 0
+    Rotation Quaternion = -0.533524, 0.090554, 0.186662, 0.819946
+    
+  END
+
+END
+
+VIEW:View 1
+  Light Angle = 50, 110
+END
+
+VIEW:View 2
+  Light Angle = 50, 110
+END
+
+VIEW:View 3
+  Light Angle = 50, 110
+END
+
+VIEW:View 4
+  Light Angle = 50, 110
+END
+
+> update
+> autolegend plot=/PLANE:xy plane, view=VIEW:View 1""")
+results2.SendCommand(Command="""PLANE:xy plane
+Apply Instancing Transform = On
+Apply Texture = Off
+Blend Texture = On
+Bound Radius = 0.5 [m]
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Culling Mode = No Culling
+Direction 1 Bound = 1.0 [m]
+Direction 1 Orientation = 0 [degree]
+Direction 1 Points = 10
+Direction 2 Bound = 1.0 [m]
+Direction 2 Points = 10
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = Off
+Draw Faces = On
+Draw Lines = Off
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Invert Plane Bound = Off
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Max = 0.0
+Min = 0.0
+Normal = 1 , 0 , 0 
+Number of Contours = 11
+Option = XY Plane
+Plane Bound = None
+Plane Type = Slice
+Point = 0 [m], 0 [m], 0 [m]
+Point 1 = 0 [m], 0 [m], 0 [m]
+Point 2 = 1 [m], 0 [m], 0 [m]
+Point 3 = 0 [m], 1 [m], 0 [m]
+Range = Global
+Render Edge Angle = 0 [degree]
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Texture Angle = 0
+Texture Direction = 0 , 1 , 0 
+Texture File =  
+Texture Material = Metal
+Texture Position = 0 , 0 
+Texture Scale = 1
+Texture Type = Predefined
+Tile Texture = Off
+Transform Texture = Off
+Transparency = 0.0
+X = 0.0 [m]
+Y = 0.0 [m]
+Z = 1.7 [m]
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results2.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /PLANE:xy plane, view=/VIEW:View 1""")
+results2.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 135, 100, 30
+    Scale = 0.00563749
+    Pan = 0, 0
+    Rotation Quaternion = -0.514181, -0.0121205, 0.12115, 0.848998
+    
+  END
+
+END
+
+> update
+> autolegend plot=/CONTOUR:xy c, view=VIEW:View 1""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /PLANE:xy plane, view=/VIEW:View 1""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command="""CONTOUR:xy c
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = o2.Mass Fraction
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = N____ src
+Max = 0.0
+Min = 0.0
+Number of Contours = 11
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.0
+Use Face Values = Off
+Value List = 0,1
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results2.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /CONTOUR:xy c, view=/VIEW:View 1""")
+results2.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 135, 100, 30
+    Scale = 0.00577843
+    Pan = 0, 0
+    Rotation Quaternion = -0.179433, 0.360479, 0.0860111, 0.911299
+    
+  END
+
+END
+
+> update
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /CONTOUR:xy c, view=/VIEW:View 1""")
+results2.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /PLANE:xy plane, view=/VIEW:View 1""")
+results2.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 135, 100, 30
+    Scale = 0.00577843
+    Pan = 0, 0
+    Rotation Quaternion = -0.062889, 0.247215, 0.0695609, 0.964415
+    
+  END
+
+END
+
+> update
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N____ src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command="> autolegend plot=/PLANE:xy plane, view=VIEW:View 1")
+results2.SendCommand(Command="> autolegend plot=/CONTOUR:Contour 1, view=VIEW:View 1")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:outlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:outlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:outlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:outlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /CONTOUR:xy c, view=/VIEW:View 1""")
+results2.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 135, 100, 30
+    Scale = 0.00577843
+    Pan = 0, 0
+    Rotation Quaternion = 0.0316298, 0.203324, 0.0511169, 0.977267
+    
+  END
+
+END
+
+> update
+# Sending visibility action from ViewUtilities
+>hide /CONTOUR:xy c, view=/VIEW:View 1""")
+results2.SendCommand(Command="> autolegend plot=/PLANE:xy plane, view=VIEW:View 1")
+results2.SendCommand(Command="""PLANE:xy plane
+Apply Instancing Transform = On
+Apply Texture = Off
+Blend Texture = On
+Bound Radius = 0.5 [m]
+Colour = 0.75, 0.75, 0.75
+Colour Map = Default Colour Map
+Colour Mode = Constant
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Culling Mode = No Culling
+Direction 1 Bound = 1.0 [m]
+Direction 1 Orientation = 0 [degree]
+Direction 1 Points = 10
+Direction 2 Bound = 1.0 [m]
+Direction 2 Points = 10
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = Off
+Draw Faces = On
+Draw Lines = Off
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Invert Plane Bound = Off
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Normal = 1 , 0 , 0 
+Number of Contours = 11
+Option = XY Plane
+Plane Bound = None
+Plane Type = Slice
+Point = 0 [m], 0 [m], 0 [m]
+Point 1 = 0 [m], 0 [m], 0 [m]
+Point 2 = 1 [m], 0 [m], 0 [m]
+Point 3 = 0 [m], 1 [m], 0 [m]
+Range = Global
+Render Edge Angle = 0 [degree]
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Texture Angle = 0
+Texture Direction = 0 , 1 , 0 
+Texture File =  
+Texture Material = Metal
+Texture Position = 0 , 0 
+Texture Scale = 1
+Texture Type = Predefined
+Tile Texture = Off
+Transform Texture = Off
+Transparency = 0.0
+X = 0.0 [m]
+Y = 0.0 [m]
+Z = 1.7 [m]
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results2.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /PLANE:xy plane, view=/VIEW:View 1""")
+results2.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 135, 100, 30
+    Scale = 0.00577843
+    Pan = 0, 0
+    Rotation Quaternion = -0.0265081, 0.0380845, 0.161308, 0.985817
+    
+  END
+
+END
+
+> update
+# Sending visibility action from ViewUtilities
+>show /CONTOUR:xy c, view=/VIEW:View 1""")
+results2.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 135, 100, 30
+    Scale = 0.00607096
+    Pan = 0, 0
+    Rotation Quaternion = 0.0131273, -0.0146214, -0.0623259, 0.997873
+    
+  END
+
+END
+
+> update
+> autolegend plot=/CONTOUR:Contour 1, view=VIEW:View 1""")
+results2.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /CONTOUR:xy c, view=/VIEW:View 1""")
+results2.SendCommand(Command="""CONTOUR:Contour 1
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = gongzuomian
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = /PLANE:xy plane
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Number of Contours = 11
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.0
+Use Face Values = Off
+Value List = 0 [Pa],1 [Pa]
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results2.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /CONTOUR:Contour 1, view=/VIEW:View 1""")
+results2.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 135, 100, 30
+    Scale = 0.00607096
+    Pan = 0, 0
+    Rotation Quaternion = 0.0345156, -0.0735313, -0.0617348, 0.994792
+    
+  END
+
+END
+
+> update
+CONTOUR:Contour 1
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = Pressure
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = /PLANE:xy plane
+Max = 0.0 [Pa]
+Min = 0.0 [Pa]
+Number of Contours = 11
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.0
+Use Face Values = Off
+Value List = 0 [Pa],1 [Pa]
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results2.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 135, 100, 30
+    Scale = 0.0063783
+    Pan = 0, 0
+    Rotation Quaternion = -0.0167451, -0.0408136, 0.03234, 0.998517
+    
+  END
+
+END
+
+> update
+CONTOUR:Contour 1
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = o2.Mass Fraction
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = /PLANE:xy plane
+Max = 0.0
+Min = 0.0
+Number of Contours = 11
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.0
+Use Face Values = Off
+Value List = 0,1
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results2.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 135, 100, 30
+    Scale = 0.0063783
+    Pan = 0, 0
+    Rotation Quaternion = -0.00520411, -0.00222761, 0.027919, 0.99961
+    
+  END
+
+END
+
+> update
+CONTOUR:Contour 1
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = n2.Mass Fraction
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = /PLANE:xy plane
+Max = 0.0
+Min = 0.0
+Number of Contours = 11
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.0
+Use Face Values = Off
+Value List = 0,1
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results2.SendCommand(Command="""CONTOUR:Contour 1
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = o2.Mass Fraction
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = /PLANE:xy plane
+Max = 0.0
+Min = 0.0
+Number of Contours = 11
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.0
+Use Face Values = Off
+Value List = 0,1
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results2.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 135, 100, 30
+    Scale = 0.00686484
+    Pan = 0, 0
+    Rotation Quaternion = 0.00285644, 0.00614404, -0.00156156, 1.00002
+    
+  END
+
+END
+
+> update
+# Sending visibility action from ViewUtilities
+>show /CONTOUR:xy c, view=/VIEW:View 1""")
+results2.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /CONTOUR:xy c, view=/VIEW:View 1""")
+results2.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /CONTOUR:xy c, view=/VIEW:View 1""")
+results2.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /CONTOUR:xy c, view=/VIEW:View 1""")
+results2.SendCommand(Command="> autolegend plot=/CONTOUR:xy c, view=VIEW:View 1")
+results2.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>show /CONTOUR:xy c, view=/VIEW:View 1""")
+results2.SendCommand(Command="""# Sending visibility action from ViewUtilities
+>hide /CONTOUR:xy c, view=/VIEW:View 1""")
+results2.SendCommand(Command="> delete /CONTOUR:xy c")
+results2.SendCommand(Command="> autolegend plot=/CONTOUR:Contour 1, view=VIEW:View 1")
+results2.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 135, 100, 30
+    Scale = 0.00686484
+    Pan = 0, 0
+    Rotation Quaternion = -0.00421099, -0.00449246, -0.00149934, 1.00003
+    
+  END
+
+END
+
+> update
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:outlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:outlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:outlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:outlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:outlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:outlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:outlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:outlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:outlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:outlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:outlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:outlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:outlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:outlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:outlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:outlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:outlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:outlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:outlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:outlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall huifenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall huifenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall huifenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall huifenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall huifenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall huifenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall huifenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall huifenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:outlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:outlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:outlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:outlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall huifenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall huifenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall huifenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall huifenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall liexi, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall liexi, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall liexi, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall liexi, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall huifenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall huifenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall huifenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall huifenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall liexi, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall liexi, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall liexi, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall liexi, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall liexi, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall liexi, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall liexi, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall liexi, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall huifenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall huifenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall huifenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall huifenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall liexi, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall liexi, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall liexi, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall liexi, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall liexi, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall liexi, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall liexi, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall liexi, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall huifenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall huifenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall huifenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall huifenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall liexi, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall liexi, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall liexi, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall liexi, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall huifenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall huifenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall huifenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall huifenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 trg, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 trg, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 trg, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 trg, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 trg, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 trg, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 trg, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 trg, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall liexi, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall liexi, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall liexi, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall liexi, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 trg, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 trg, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 trg, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 trg, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall gongzuomian, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall jinfenghang, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:wall maoluodai, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:jinfenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:N_____4 src, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command=""">highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:gongzuomian
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:huifenghang
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:liexi
+>highlight regionlist=/DATA READER/CASE:Case FLU 3/BOUNDARY:inlet, domainlist=/DATA READER/CASE:Case FLU 3/DOMAIN:maoluodai""")
+results2.SendCommand(Command="""CONTOUR:Contour 1
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = o2.Mass Fraction
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = /PLANE:xy plane
+Max = 0.0
+Min = 0.0
+Number of Contours = 11
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.0
+Use Face Values = Off
+Value List = 0,1
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results2.SendCommand(Command="""CONTOUR:Contour 1
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = o2.Mass Fraction
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Local
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = /PLANE:xy plane
+Max = 0.0
+Min = 0.0
+Number of Contours = 11
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.0
+Use Face Values = Off
+Value List = 0,1
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results2.SendCommand(Command="""CONTOUR:Contour 1
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = o2.Mass Fraction
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = /PLANE:xy plane
+Max = 0.0
+Min = 0.0
+Number of Contours = 11
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.0
+Use Face Values = Off
+Value List = 0,1
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results2.SendCommand(Command="""VIEW:View 1
+  Camera Mode = User Specified
+  CAMERA:
+    Option = Pivot Point and Quaternion
+    Pivot Point = 135, 100, 30
+    Scale = 0.00609251
+    Pan = 0, 0
+    Rotation Quaternion = 0.00639865, 0.00614953, -0.0015147, 1.00001
+    
+  END
+
+END
+
+> update
+HARDCOPY:
+Antialiasing = On
+Hardcopy Filename = E:/Model/goaf/image/O2.png
+Hardcopy Format = png
+Hardcopy Tolerance = 0.0001
+Image Height = 600
+Image Scale = 100
+Image Width = 600
+JPEG Image Quality = 80
+Use Screen Size = On
+White Background = Off
+END
+>print""")
+results2.SendCommand(Command="""CONTOUR:Contour 1
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = ch4.Mass Fraction
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = /PLANE:xy plane
+Max = 0.0
+Min = 0.0
+Number of Contours = 11
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.0
+Use Face Values = Off
+Value List = 0,1
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results2.SendCommand(Command="""HARDCOPY:
+Antialiasing = On
+Hardcopy Filename = E:/Model/goaf/image/CH4.png
+Hardcopy Format = png
+Hardcopy Tolerance = 0.0001
+Image Height = 600
+Image Scale = 100
+Image Width = 600
+JPEG Image Quality = 80
+Use Screen Size = On
+White Background = Off
+END
+>print""")
+results2.SendCommand(Command="""CONTOUR:Contour 1
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = co2.Mass Fraction
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = /PLANE:xy plane
+Max = 0.0
+Min = 0.0
+Number of Contours = 11
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.0
+Use Face Values = Off
+Value List = 0,1
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results2.SendCommand(Command="""CONTOUR:Contour 1
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = h2o.Mass Fraction
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = /PLANE:xy plane
+Max = 0.0
+Min = 0.0
+Number of Contours = 11
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.0
+Use Face Values = Off
+Value List = 0,1
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results2.SendCommand(Command="""CONTOUR:Contour 1
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = h2o.Mass Fraction
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = /PLANE:xy plane
+Max = 0.0
+Min = 0.0
+Number of Contours = 11
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.0
+Use Face Values = Off
+Value List = 0,1
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results2.SendCommand(Command="""CONTOUR:Contour 1
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = n2.Mass Fraction
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = /PLANE:xy plane
+Max = 0.0
+Min = 0.0
+Number of Contours = 11
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.0
+Use Face Values = Off
+Value List = 0,1
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results2.SendCommand(Command="""HARDCOPY:
+Antialiasing = On
+Hardcopy Filename = E:/Model/goaf/image/N2.png
+Hardcopy Format = png
+Hardcopy Tolerance = 0.0001
+Image Height = 600
+Image Scale = 100
+Image Width = 600
+JPEG Image Quality = 80
+Use Screen Size = On
+White Background = Off
+END
+>print""")
+results2.SendCommand(Command="""CONTOUR:Contour 1
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = h2o.Mass Fraction
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = /PLANE:xy plane
+Max = 0.0
+Min = 0.0
+Number of Contours = 11
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.0
+Use Face Values = Off
+Value List = 0,1
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results2.SendCommand(Command="""CONTOUR:Contour 1
+Apply Instancing Transform = On
+Clip Contour = Off
+Colour Map = Default Colour Map
+Colour Scale = Linear
+Colour Variable = o2.Mass Fraction
+Colour Variable Boundary Values = Conservative
+Constant Contour Colour = Off
+Contour Range = Global
+Culling Mode = No Culling
+Domain List = /DOMAIN GROUP:All Domains
+Draw Contours = On
+Font = Sans Serif
+Fringe Fill = On
+Instancing Transform = /DEFAULT INSTANCE TRANSFORM:Default Transform
+Lighting = On
+Line Colour = 0, 0, 0
+Line Colour Mode = Default
+Line Width = 1
+Location List = /PLANE:xy plane
+Max = 0.0
+Min = 0.0
+Number of Contours = 11
+Show Numbers = Off
+Specular Lighting = On
+Surface Drawing = Smooth Shading
+Text Colour = 0, 0, 0
+Text Colour Mode = Default
+Text Height = 0.024
+Transparency = 0.0
+Use Face Values = Off
+Value List = 0,1
+  OBJECT VIEW TRANSFORM:
+  Apply Reflection = Off
+  Apply Rotation = Off
+  Apply Scale = Off
+  Apply Translation = Off
+  Principal Axis = Z
+  Reflection Plane Option = XY Plane
+  Rotation Angle = 0.0 [degree]
+  Rotation Axis From = 0 [m], 0 [m], 0 [m]
+  Rotation Axis To = 0 [m], 0 [m], 0 [m]
+  Rotation Axis Type = Principal Axis
+  Scale Vector = 1 , 1 , 1 
+  Translation Vector = 0 [m], 0 [m], 0 [m]
+  X = 0.0 [m]
+  Y = 0.0 [m]
+  Z = 0.0 [m]
+  END
+END""")
+results2.Exit()
+setup2.SendCommand(Command="(cx-gui-do cx-activate-item \"Information*OK\")(cx-use-window-id 51)(cx-set-camera-relative '(-28.6002 76.2859 153.58) '(0 0 0) '(0.0188928 0.0769492 -0.0350193) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(-39.2067 79.4038 125.127) '(0 0 0) '(0.014502 0.0642119 -0.0360568) 0 0)(cx-use-window-id 51)(cx-set-camera-relative '(18.1912 21.8447 41.954) '(0 0 0) '(0.00511198 0.0190848 -0.0119739) 0 0)(cx-use-window-id 51)(handle-key \"control ??\")(cx-use-window-id 51)(dolly-camera 97.1326 -40.9528 0)(cx-use-window-id 51)(dolly-camera 22.6828 5.49573 0)")
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "MenuBar*FileMenu*Save Picture...")')
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Save Picture*PanelButtons*PushButton1(OK)")')
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Save Picture*PanelButtons*PushButton2(Cancel)")')
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "MenuBar*FileMenu*Save Picture...")')
+setup2.SendCommand(Command="(cx-gui-do cx-activate-item \"Save Picture*PanelButtons*PushButton1(OK)\")(cx-gui-do cx-set-file-dialog-entries \"Select File\" '( \"E:/????/Model/goaf/image/model.png\") \"Hardcopy Files (*.png)\")")
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Save Picture*PanelButtons*PushButton2(Cancel)")')
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "MenuBar*FileMenu*Save Picture...")')
+setup2.SendCommand(Command="(cx-gui-do cx-activate-item \"Save Picture*PanelButtons*PushButton1(OK)\")(cx-gui-do cx-set-file-dialog-entries \"Select File\" '( \"E:/????/Model/goaf/image/model.png\") \"Hardcopy Files (*.png)\")")
+setup2.SendCommand(Command="(cx-gui-do cx-activate-item \"Save Picture*PanelButtons*PushButton1(OK)\")(cx-gui-do cx-set-file-dialog-entries \"Select File\" '( \"E:/????/Model/goaf/image/model.png\") \"Hardcopy Files (*.png)\")")
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Save Picture*PanelButtons*PushButton2(Cancel)")')
+setup2.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|General"))(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|General"))')
+setup2.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|General"))(cx-gui-do cx-activate-item "NavigationPane*Frame2*Table1*List_Tree2")')
+setup2.SendCommand(Command='(cx-gui-do cx-set-list-tree-selections "NavigationPane*Frame2*Table1*List_Tree2" (list "Setup|General"))')
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "General*Table1*ButtonBox1(Mesh)*PushButton2(Display)")')
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "Mesh Display*PanelButtons*PushButton2(Cancel)")')
+setup2.SendCommand(Command='(cx-gui-do cx-activate-item "MenuBar*FileMenu*Close Fluent")')
+geometry1.Edit()
+geometry1.Exit()
+Save(Overwrite=True)

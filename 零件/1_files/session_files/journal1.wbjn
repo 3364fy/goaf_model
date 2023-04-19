@@ -1,0 +1,52 @@
+# encoding: utf-8
+# 2022 R1
+SetScriptVersion(Version="22.1.217")
+template1 = GetTemplate(TemplateName="Geometry")
+system1 = template1.CreateSystem()
+geometry1 = system1.GetContainer(ComponentName="Geometry")
+geometry1.Edit()
+template2 = GetTemplate(TemplateName="Fluid Flow")
+system2 = template2.CreateSystem()
+template3 = GetTemplate(
+    TemplateName="Static Mechanical",
+    Solver="ANSYS")
+system3 = template3.CreateSystem()
+template4 = GetTemplate(
+    TemplateName="Static Structural",
+    Solver="ANSYS")
+system4 = template4.CreateSystem()
+geometryComponent1 = system4.GetComponent(Name="Geometry")
+system5 = template2.CreateSystem(
+    ComponentsToShare=[geometryComponent1],
+    Position="Right",
+    RelativeTo=system4)
+system6 = template2.CreateSystem(
+    Position="Right",
+    RelativeTo=system1)
+geometryComponent2 = system6.GetComponent(Name="Geometry")
+solutionComponent1 = system6.GetComponent(Name="Solution")
+componentTemplate1 = GetComponentTemplate(Name="SimulationSetupCellTemplate_StructuralStaticANSYS")
+system7 = template4.CreateSystem(
+    ComponentsToShare=[geometryComponent2],
+    DataTransferFrom=[Set(FromComponent=solutionComponent1, TransferName=None, ToComponentTemplate=componentTemplate1)],
+    Position="Right",
+    RelativeTo=system6)
+geometryComponent3 = system1.GetComponent(Name="Geometry")
+system8 = template4.CreateSystem(
+    ComponentsToShare=[geometryComponent3],
+    Position="Below",
+    RelativeTo=system6)
+system2.Delete()
+system1.Delete()
+system6.Delete()
+system7.Delete()
+system8.Delete()
+system3.Delete()
+system5.Delete()
+system4.Delete()
+system9 = template1.CreateSystem()
+geometry2 = system9.GetContainer(ComponentName="Geometry")
+geometry2.Edit()
+geometry2.Exit()
+geometry2.Edit()
+Save(Overwrite=True)

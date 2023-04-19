@@ -1,0 +1,7 @@
+# encoding: utf-8
+# 2022 R1
+SetScriptVersion(Version="22.1.217")
+system1 = GetSystem(Name="FLU 1")
+setupComponent1 = system1.GetComponent(Name="Setup")
+setupComponent1.Refresh()
+Save(Overwrite=True)

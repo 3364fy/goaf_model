@@ -1,0 +1,9 @@
+echo off
+set LOCALHOST=%COMPUTERNAME%
+set KILL_CMD="D:\PROGRA~1\ANSYSI~1\v221\fluent/ntbin/win64/winkill.exe"
+
+"D:\PROGRA~1\ANSYSI~1\v221\fluent\ntbin\win64\tell.exe" LAPTOP-0NF6FCBV 7345 CLEANUP_EXITING
+if /i "%LOCALHOST%"=="LAPTOP-0NF6FCBV" (%KILL_CMD% 21080) 
+if /i "%LOCALHOST%"=="LAPTOP-0NF6FCBV" (%KILL_CMD% 15344) 
+if /i "%LOCALHOST%"=="LAPTOP-0NF6FCBV" (%KILL_CMD% 2792)
+del "E:\桌面\模型\采空区\cleanup-fluent-LAPTOP-0NF6FCBV-15344.bat"

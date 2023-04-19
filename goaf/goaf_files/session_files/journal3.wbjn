@@ -1,0 +1,60 @@
+# encoding: utf-8
+# 2022 R1
+SetScriptVersion(Version="22.1.217")
+system1 = GetSystem(Name="Geom")
+geometry1 = system1.GetContainer(ComponentName="Geometry")
+geometry1.Edit()
+Save(Overwrite=True)
+system2 = GetSystem(Name="SYS")
+meshComponent1 = system2.GetComponent(Name="Mesh")
+meshComponent1.Refresh()
+mesh1 = system2.GetContainer(ComponentName="Mesh")
+mesh1.Edit()
+mesh1.Exit()
+system2.Update(AllDependencies=True)
+meshComponent1.Update(AllDependencies=True)
+mesh1.Edit()
+meshComponent1.Update(AllDependencies=True)
+Save(Overwrite=True)
+system2.Update(AllDependencies=True)
+mesh1.Exit()
+mesh1.Edit()
+meshComponent1.Update(AllDependencies=True)
+template1 = GetTemplate(TemplateName="Mesh")
+system3 = template1.CreateSystem(
+    Position="Below",
+    RelativeTo=system1)
+system3.Delete()
+system4 = template1.CreateSystem(
+    Position="Below",
+    RelativeTo=system2)
+geometryComponent1 = system4.GetComponent(Name="Geometry")
+geometryComponent2 = system1.GetComponent(Name="Geometry")
+geometryComponent1.ReplaceWithShare(
+    TargetSystem=system4,
+    ComponentToShare=geometryComponent2,
+    SourceSystem=system1)
+mesh1.Exit()
+meshComponent2 = system4.GetComponent(Name="Mesh")
+meshComponent2.Refresh()
+mesh2 = system4.GetContainer(ComponentName="Mesh")
+mesh2.Edit()
+geometry1.Exit()
+Save(Overwrite=True)
+template2 = GetTemplate(TemplateName="FLUENT")
+system5 = template2.CreateSystem(
+    Position="Right",
+    RelativeTo=system4)
+setupComponent1 = system5.GetComponent(Name="Setup")
+meshComponent2.TransferData(TargetComponent=setupComponent1)
+template3 = GetTemplate(TemplateName="Results")
+system6 = template3.CreateSystem(
+    Position="Right",
+    RelativeTo=system5)
+solutionComponent1 = system5.GetComponent(Name="Solution")
+resultsComponent1 = system6.GetComponent(Name="Results")
+solutionComponent1.TransferData(TargetComponent=resultsComponent1)
+meshComponent2.Update(AllDependencies=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Open(FilePath="E:/桌面/模型/采空区/采空区.wbpj")
